@@ -3,14 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Website</title>
+<title>BearBunch</title>
 
 <style>
+:root{
+    --bg1:#8ec5fc;
+    --bg2:#e0c3fc;
+    --text:#555;
+    --card:rgba(255,255,255,.70);
+    --card-border:rgba(255,255,255,.6);
+    --accent1:#0077ff;
+    --accent2:#005fcc;
+    --glass:0 10px 30px rgba(0,0,0,.12);
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Inter,Arial,Helvetica,sans-serif;
 }
 
 html{
@@ -18,17 +29,23 @@ html{
 }
 
 body{
-    background:#fff;
-    color:#222;
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
     line-height:1.6;
 }
+
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
-    background:#111;
-    padding:18px 8%;
     z-index:1000;
+    padding:18px 8%;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.4);
 }
 
 nav{
@@ -38,9 +55,9 @@ nav{
 }
 
 .logo{
+    font-size:1.7rem;
+    font-weight:800;
     color:#fff;
-    font-size:1.6rem;
-    font-weight:bold;
 }
 
 nav ul{
@@ -52,12 +69,15 @@ nav ul{
 nav a{
     color:#fff;
     text-decoration:none;
-    transition:.3s;
+    font-weight:600;
+    transition:.25s;
 }
 
 nav a:hover{
-    color:#6aa8ff;
+    color:#dff0ff;
 }
+
+/* ================= HERO ================= */
 
 .hero{
     min-height:90vh;
@@ -65,37 +85,50 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:40px;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    color:#fff;
+    padding:40px 20px;
+}
+
+.hero-box{
+    max-width:750px;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-radius:22px;
+    padding:50px;
+    box-shadow:var(--glass);
 }
 
 .hero h1{
     font-size:3.5rem;
     margin-bottom:20px;
+    color:#222;
 }
 
 .hero p{
-    max-width:650px;
-    margin:auto;
-    margin-bottom:30px;
-    font-size:1.1rem;
+    font-size:1.15rem;
+    margin-bottom:35px;
 }
+
+/* ================= BUTTON ================= */
 
 .btn{
     display:inline-block;
-    background:#fff;
-    color:#333;
     padding:14px 28px;
-    border-radius:8px;
+    border-radius:12px;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
+    color:#fff;
+    background:linear-gradient(180deg,var(--accent1),var(--accent2));
+    transition:.2s;
+    box-shadow:0 10px 25px rgba(0,119,255,.25);
 }
 
 .btn:hover{
     transform:translateY(-3px);
 }
+
+/* ================= SECTION ================= */
 
 section{
     padding:80px 10%;
@@ -103,9 +136,12 @@ section{
 
 section h2{
     text-align:center;
-    margin-bottom:40px;
     font-size:2.2rem;
+    margin-bottom:40px;
+    color:#222;
 }
+
+/* ================= CARDS ================= */
 
 .cards{
     display:grid;
@@ -114,29 +150,49 @@ section h2{
 }
 
 .card{
-    background:#f5f5f5;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:18px;
     padding:30px;
-    border-radius:10px;
     text-align:center;
+    box-shadow:var(--glass);
 }
 
 .card h3{
     margin-bottom:15px;
+    color:#222;
 }
+
+/* ================= ABOUT ================= */
 
 .about{
-    text-align:center;
-    max-width:800px;
+    max-width:850px;
     margin:auto;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    box-shadow:var(--glass);
 }
 
+/* ================= FOOTER ================= */
+
 footer{
-    background:#111;
-    color:#fff;
-    text-align:center;
+    margin-top:50px;
     padding:25px;
-    margin-top:60px;
+    text-align:center;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-top:1px solid rgba(255,255,255,.4);
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -146,12 +202,16 @@ nav{
 }
 
 nav ul{
-    flex-wrap:wrap;
     justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-box{
+    padding:35px 25px;
 }
 
 .hero h1{
-    font-size:2.3rem;
+    font-size:2.4rem;
 }
 
 }
@@ -164,12 +224,12 @@ nav ul{
 
 <nav>
 
-<div class="logo">YourBrand</div>
+<div class="logo">🐻 BearBunch</div>
 
 <ul>
 <li><a href="/home">Home</a></li>
-<li><a href="/#services">Services</a></li>
-<li><a href="/#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
 <li><a href="/contact">Contact</a></li>
 </ul>
 
@@ -179,17 +239,41 @@ nav ul{
 
 <section class="hero">
 
-<div>
+<div class="hero-box">
 
 <h1>Welcome to BearBunch</h1>
 
 <p>
-Create an amazing online presence with this modern,
-responsive one-page template.
-Customize it however you like.
+Welcome! We build games, websites, and software with modern technology.
+Enjoy your stay and explore what we have to offer.
 </p>
 
-<a href="/contact" class="btn">Contact Us</a>
+<a class="btn" href="/contact">Contact Us</a>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎮 Game Development</h3>
+<p>Creating fun and engaging games for players of all ages.</p>
+</div>
+
+<div class="card">
+<h3>💻 Web Development</h3>
+<p>Fast, responsive websites built with modern technologies.</p>
+</div>
+
+<div class="card">
+<h3>🚀 Custom Software</h3>
+<p>Tailored applications designed to solve real-world problems.</p>
+</div>
 
 </div>
 
@@ -197,15 +281,14 @@ Customize it however you like.
 
 <section id="about">
 
-<div class="about">
-
 <h2>About Us</h2>
 
+<div class="about">
+
 <p>
-Replace this text with information about yourself,
-your company, or your project.
-This template is intentionally simple so it's easy
-to customize.
+BearBunch is a home business founded by <strong>Jake Woodward</strong>.
+We specialize in developing games, websites, and software projects while
+focusing on quality, creativity, and user experience.
 </p>
 
 </div>
