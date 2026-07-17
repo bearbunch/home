@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    position:sticky;
+    top:0;
+    background:#111;
+    padding:18px 8%;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#fff;
+    font-size:1.6rem;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#6aa8ff;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:#fff;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    margin-bottom:30px;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    background:#fff;
+    color:#333;
+    padding:14px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.2rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#f5f5f5;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.about{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+}
+
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+@media(max-width:700px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">YourBrand</div>
+
+<ul>
+<li><a href="/home">Home</a></li>
+<li><a href="/#services">Services</a></li>
+<li><a href="/#about">About</a></li>
+<li><a href="/contact">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>Welcome to BearBunch</h1>
+
+<p>
+Create an amazing online presence with this modern,
+responsive one-page template.
+Customize it however you like.
+</p>
+
+<a href="/contact" class="btn">Contact Us</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="about">
+
+<h2>About Us</h2>
+
+<p>
+Replace this text with information about yourself,
+your company, or your project.
+This template is intentionally simple so it's easy
+to customize.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 BearBunch. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
